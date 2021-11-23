@@ -1,0 +1,405 @@
+<html><head> <meta charset="utf-8"><meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="renderer" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=EDGE"><title>健康码</title><style>body {
+			-webkit-text-size-adjust: 100% !important;
+		}
+		html,
+		body,
+		div,
+		span,
+		applet,
+		object,
+		iframe,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		blockquote,
+		pre,
+		a,
+		abbr,
+		acronym,
+		address,
+		big,
+		cite,
+		code,
+		del,
+		dfn,
+		em,
+		font,
+		img,
+		ins,
+		kbd,
+		q,
+		s,
+		samp,
+		small,
+		strike,
+		strong,
+		sub,
+		sup,
+		tt,
+		var,
+		b,
+		u,
+		i,
+		center,
+		dl,
+		dt,
+		dd,
+		ol,
+		ul,
+		li,
+		fieldset,
+		form,
+		label,
+		legend,
+		table,
+		caption,
+		tbody,
+		tfoot,
+		thead,
+		tr,
+		th,
+		td,
+		article,
+		aside,
+		canvas,
+		details,
+		embed,
+		figure,
+		figcaption,
+		footer,
+		header,
+		hgroup,
+		menu,
+		nav,
+		output,
+		ruby,
+		section,
+		summary,
+		time,
+		mark,
+		audio,
+		video,
+		button,
+		input,
+		textarea {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		header,
+		footer,
+		section,
+		article,
+		aside,
+		nav,
+		hgroup,
+		address,
+		figure,
+		figcaption,
+		menu,
+		details {
+			display: block;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		caption,
+		th {
+			font-weight: normal;
+		}
+
+		html,
+		body,
+		fieldset,
+		img,
+		iframe,
+		abbr {
+			border: 0;
+		}
+
+		i,
+		cite,
+		em,
+		var,
+		address,
+		dfn {
+			font-style: normal;
+		}
+
+		[hidefocus],
+		summary {
+			outline: 0;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		pre,
+		code,
+		kbd,
+		samp {
+			font-family: inherit;
+		}
+
+		q:before,
+		q:after {
+			content: none;
+		}
+
+		body,
+		textarea,
+		input,
+		button,
+		select,
+		keygen,
+		legend {
+			color: #333;
+			outline: 0;
+			font-family: PingFang-SC-Medium, 'microsoft yahei', sans-serif;
+		}
+
+		input,
+		textarea {
+			-webkit-appearance: none;
+			border: none;
+			outline: none;
+			background: none;
+			-webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+		}
+
+		textarea {
+			overflow: auto;
+			resize: none;
+		}
+
+		a,
+		button {
+			display: block;
+			background: none;
+			border: none;
+		}
+
+		a {
+			-webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+			outline: none;
+			text-decoration: none;
+		}
+
+		img {
+			display: block;
+		}
+		.fram-alert {
+			position: fixed;
+			left: 50%;
+			bottom: 0;
+			transform: translate(-50%, 0%);
+			top: 0;
+			background: rgba(49, 49, 49, 0.8);
+			z-index: 1000;
+		}
+
+		.fram-alert>div {
+			background: #fff;
+			color: #333;
+			font-size: 13px;
+			position: fixed;
+			top: 200px;
+			left: 50%;
+			border-radius: 2px;
+			transform: translate(-50%, 0);
+			opacity: 1;
+			transition: all 1s ease;
+			z-index: 999;
+			width: calc(100% - 80px);
+		}
+
+		.fram-alert>div p {
+			height: 86px;
+			margin: 0 20px;
+		}
+
+		.fram-alert>div p span {
+			display: block;
+			color: #333;
+			height: 43px;
+			line-height: 60px;
+		}
+
+		.fram-alert>div p span {
+			height: 100%;
+			line-height: 86px;
+		}
+
+		.fram-alert>div a {
+			display: block;
+			margin: 0 20px;
+			height: 36px;
+			line-height: 36px;
+			text-align: center;
+			color: #fff;
+			font-size: 14px;
+			border-radius: 2px;
+			margin-bottom: 23px;
+			background: #4285f4;
+
+		}
+
+		html {
+			background: #eee;
+		}
+
+		@media (max-width: 768px) {
+			body>div:first-child {
+				max-width: 768px;
+				margin: 0 auto;
+			}
+		}
+
+		@media (min-width: 769px) {
+			body {
+				margin: 0 auto !important;
+			}
+
+			body>div:first-child {
+				width: 100%;
+			}
+		}
+
+		#__vconsole {
+			font-size: 12px !important;
+		}
+
+		.page-load>div,
+		.file-pop>div {
+			min-width: 150px;
+			text-align: center;
+			min-height: 123px;
+			line-height: 123px;
+			background: rgba(51, 51, 51, 0.7);
+			color: #fff;
+			font-size: 15px;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			border-radius: 5px;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			opacity: 1;
+			z-index: 999;
+			max-width: 250px;
+			word-break: break-all;
+		}
+
+		.page-load>div img,
+		.file-pop>div img {
+			width: 55px;
+			height: 55px;
+			margin: 19px auto 10px;
+		}
+
+		.page-load>div p,
+		.file-pop>div p {
+			color: #fff;
+			font-size: 14px;
+			min-height: 14px;
+			line-height: 14px;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 0 10px;
+		}
+
+		.glable-nodata {
+			margin-top: 0 !important;
+			padding-top: 100px;
+			box-sizing: border-box;
+			text-align: center;
+		}
+
+		.glable-nodata img {
+			width: 200px;
+			height: 200px;
+			margin: 0 auto;
+		}
+
+		.glable-nodata p {
+			color: #878787;
+			font-size: 14px;
+			min-height: 14px;
+			line-height: 14px;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			padding: 0 10px;
+		}
+
+		html {
+			/*filter:grayscale(100%);*/
+		}</style><link rel="stylesheet" type="text/css" href="/site/static/font/icon/iconfont.css"><link href="/site/static/css/app.5561089276ede9c5265ef261c65f4606.css" rel="stylesheet"><!--[if lt IE 9]><script r='m'>document.createElement("section")</script><![endif]--><link data-id="b5261814cbf81368b63bd10fab2d359c" href="https://yqapp.cueb.edu.cn:/site/static/css/style/default.main.css?v=1635672359216" rel="stylesheet" type="text/css"><script type="text/javascript" charset="utf-8" async="" src="/site/static/js/0.b2305879e99acbccb6a7.js?v=1623228169115"></script><script type="text/javascript" charset="utf-8" async="" src="/site/static/js/502.150eb1a8f39466b35716.js?v=1623228169115"></script><link type="image/png" href="https://iyqapp.cueb.edu.cn/image/0/93e2b997d052a1d4f37dc40ea420e53c.png" rel="shortcut icon"></head><body style="width: 100%;"><div class="newQrcode" style="display: block;"><!----> <div><div class="epide_outer"><div class="logo"><div><img src="https://iyqapp.cueb.edu.cn/image/0/93e2b997d052a1d4f37dc40ea420e53c.png" alt=""></div> <span>首都经济贸易大学</span></div> <div class="bjc"><img src="index2.png" alt=""> <div class="users"><ul><li><span>姓名</span><span>杨若新</span></li> <li><span>学工号</span><span>320191200087</span></li></ul> <ul><li style="width: 100%;"><span>单位</span><span>统计学院</span></li></ul></div></div></div> <div class="content mastercontent"><div class="location_tit"><!----> <div class="qrcode-wrap master"><div class="title-master"><span class="left">通行码</span><span class="right"><em>扫码时间：2021-11-23 14:00:03</em></span></div> <div class="code_img qr-box qr-publice buaa_code_img" style="display: none;"><div class="border"><div id="qrcode" style="display: none;"></div> <span>二维码生成中...</span> <span style="display: none;">二维码生成失败，点击重新生成</span></div></div> <p class="code_img_text" style="display: none;">通行成功</p> <div class="bignocode-wrap"><img src="index.png" alt=""> <!----> <!----> <!----> <!----> <p class="">通行成功</p></div></div> <div class="line"></div> <div class="buaaszwz"><div class="szwz-header"><span class="left">所在位置</span> <span class="right">赛欧（出口）</span></div></div> <!----> <!----> <div class="line"></div> <div class="other-foot"><span>您的出入校申请时间如下：<br>出校时间 2021-11-23<br>入校时间 2021-11-24</span></div> <!----> <!----> <!----> <!----></div></div></div> <!----> <div data-v-3f5a7bce="" class="g-pop" appkey="healthcode" style="width: 100%; display: none;"><div data-v-3f5a7bce="" class="pophint"><img data-v-3f5a7bce="" src="" alt=""> <p data-v-3f5a7bce=""></p></div></div></div><script>if (window.location.href.indexOf("debug=1") !== -1) {
+			var jsScript = document.createElement("script");
+			jsScript.src = "/site/static/js/vconsole.min.js";
+			jsScript.type = "text/javascript";
+			jsScript.async = false;
+			jsScript.onload = function () {
+
+				var vConsole = new VConsole();
+			};
+			document.getElementsByTagName("body")[0].appendChild(jsScript);
+		}</script><script type="text/javascript" src="/site/static/js/manifest.2d63d019b21a1662a7ab.js?v=1623228169115"></script><script type="text/javascript" src="/site/static/js/vendor.4d954368a07d0c71b6ba.js?v=1623228169115"></script><script type="text/javascript" src="/site/static/js/app.5a22492634178a4c9564.js?v=1623228169115"></script><div tabindex="-1" role="dialog" aria-hidden="true" class="pswp"><div class="pswp__bg"></div> <div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div> <div class="pswp__item"></div> <div class="pswp__item"></div></div> <div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div> <button title="Close (Esc)" class="pswp__button pswp__button--close"></button> <button title="Share" class="pswp__button pswp__button--share"></button> <button title="Toggle fullscreen" class="pswp__button pswp__button--fs"></button> <button title="Zoom in/out" class="pswp__button pswp__button--zoom"></button> <div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div> <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div> <button title="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button> <button title="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button> <div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div><div id="progress_loading" style="display: none;"><div style="width: 0%;"></div></div><script src="https://yqapp.cueb.edu.cn:/site/static//js/qrcode.js?v=1635672359216" data-id="b0d9e47e1cc37e75b87372f8915aa255" type="text/javascript"></script><script src="https://yqapp.cueb.edu.cn:/site/static//js/normal_socket.js?v=1635672359216" data-id="0cd144b1fde6a8298de6e05f2164b204" type="text/javascript"></script><script src="/site/static/js/md5.js"></script><script src="/site/static/js/getscript.js"></script><script type="text/javascript">(function () {
+		function IEVersion() {
+			var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+			var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+			var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
+			var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+			if (isIE) {
+				var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+				reIE.test(userAgent);
+				var fIEVersion = parseFloat(RegExp["$1"]);
+				if (fIEVersion == 7) {
+					return 7;
+				} else if (fIEVersion == 8) {
+					return 8;
+				} else if (fIEVersion == 9) {
+					return 9;
+				} else if (fIEVersion == 10) {
+					return 10;
+				} else {
+					return 6;//IE版本<=7
+				}
+			} else if (isEdge) {
+				return 'edge';//edge
+			} else if (isIE11) {
+				return 11; //IE11
+			} else {
+				return false;//不是ie浏览器
+			}
+		}
+		if (IEVersion() && IEVersion() != 'edge') {
+			if (window.location.href.indexOf('leaveshoolsq') > -1) {
+				document.body.innerHTML = '<div style="font-size: 20px;text-align: center;margin: 300px auto;">为了更好的浏览效果，请您使用较新版本的Chrome、Firefox、Safari进行访问</div>'
+			}
+		}
+		if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+			handleFontSize();
+		} else {
+			if (document.addEventListener) {
+				document.addEventListener("WeixinJSBridgeReady", handleFontSize, false);
+			} else if (document.attachEvent) {
+				document.attachEvent("WeixinJSBridgeReady", handleFontSize);
+				document.attachEvent("onWeixinJSBridgeReady", handleFontSize);
+			}
+		}
+		function handleFontSize() {
+			WeixinJSBridge.invoke('setFontSizeCallback', { 'fontSize': 0 });
+			WeixinJSBridge.on('menu:setfont', function () {
+				WeixinJSBridge.invoke('setFontSizeCallback', { 'fontSize': 0 });
+			});
+		}
+	})();</script></body></html>
